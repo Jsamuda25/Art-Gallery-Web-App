@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(129, 202, 222); 
+}
+a{
+    color: black;
+    font-size: larger;
+}
+
+img{
+    width: 200px;
+    /* height: 200px; */
+}
+
+.follow{
+    /* background-color: rgb(223, 161, 46);
+    margin-left: 30px;
+    box-shadow: 5px 5px; */
+    float: right;
+    padding: 5px;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(223, 161, 46);
+    padding: 5px 5px;
+    /* width: 1500px; */
+}
+
+
+.individual{
+    background-color: rgb(223, 161, 46);
+    padding: 10px 10px;
+    gap: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#review-link, #view-reviews{
+    font-size: 15px;
+}
+
+#bell{
+    width: 20px;
+    height: 20px;
+}
+
+#brush{
+    width: 20px;
+    height: 20px;
+}
+#author-link{
+    font-size: 17px;
+}

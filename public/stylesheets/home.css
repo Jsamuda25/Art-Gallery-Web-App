@@ -1,0 +1,83 @@
+body{
+    background-color: rgb(175, 219, 232); 
+}
+a{
+    color: black;
+    font-size: larger;
+}
+
+img{
+    width: 200px;
+    /* height: 200px; */
+}
+
+.account-type{
+    background-color: rgb(223, 161, 46);
+    /* margin-left: 35px; */
+    /* box-shadow: 5px 5px; */
+    /* float: right; */
+    padding: 5px 5px;
+}
+
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(223, 161, 46);
+    padding: 5px 5px;
+    /* width: 1500px; */
+}
+
+#upload-div{
+    float:right;
+}
+
+.main-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px;
+    /* background-color: rgb(129, 202, 222);  */
+    background-color: rgb(54, 201, 241); 
+; 
+
+}
+
+#look-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#lookup{
+    width: 100px;
+    height: 20px;
+}
+
+#review-link, #view-reviews{
+    font-size: small;
+}
+
+.individual{
+    background-color: rgb(223, 161, 46);
+    padding: 10px 10px;
+    gap: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 500px;
+}
+
+#header-links{
+    font-size: 15px;
+}
+
+#bell{
+    width: 20px;
+    height: 20px;
+}
+#brush{
+    width: 20px;
+    height: 20px;
+}

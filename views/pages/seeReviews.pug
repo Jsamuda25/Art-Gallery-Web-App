@@ -1,0 +1,68 @@
+html
+    head 
+        title Reviews
+        link(rel='stylesheet', href='/stylesheets/review.css')
+        script(src='/javascripts/likesClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/following") Following 
+            |
+            |
+            |
+            |
+            a(href="/user/liked") Liked
+            |
+            |
+            |
+            |
+            if user.reviews.length>0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            if user.registered.length > 0
+                a(href="/user/enrolled") Enrolled 
+            |
+            |
+            |
+            br
+            |
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+
+            
+        div#main 
+            h1 Welcome to the Review Page!
+            h3 Here, you can see reviews on the piece titled: "#{name}".
+            if !user.titles.includes(artist)
+                a(href="/user/review/"+name, id="view-reviews") Click here to leave a review!
+
+
+            each review in art.reviews
+                div(class="individual")
+                    p  Review about "#{review.title}":  #{review.comment}
+                    - let i = 0;
+                    while i < yourReviews.length
+                        if yourReviews[i].comment === review.comment && yourReviews[i].title ===review.title
+                            input(class="delete",id = review, value='Delete', type='button', onclick="deleteReview()")
+                            - break
+                        else 
+                            - i++;
+                    br
+

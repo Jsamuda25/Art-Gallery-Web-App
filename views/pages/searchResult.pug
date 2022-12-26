@@ -1,0 +1,69 @@
+html
+    head 
+        title Keyword Search Page 
+        link(rel='stylesheet', href='/stylesheets/artistPage.css')
+        script(src='/javascripts/likesClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/following") Following 
+            |
+            |
+            |
+            |
+            a(href="/user/liked") Liked
+            |
+            |
+            |
+            |
+            if user.reviews.length>0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            |
+            if user.registered.length > 0
+                a(href="/user/enrolled") Enrolled 
+            |
+            |
+            |
+            br
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+
+            
+        div#main 
+            h1 Welcome to the Query Page!
+            h3 Here you will find all artwork that matches the lookup for #{type} : #{value}
+            each piece in artwork
+                div(class="individual")
+                    p Artist: #{piece.artist}
+                    p Name of Work: #{piece.name}
+                    p Year: #{piece.year}
+                    p Category: #{piece.category}
+                    p Medium: #{piece.medium}
+                    p Description: #{piece.description}
+                    
+                    img(src= piece.image)
+                    br
+                    p Likes: #{piece.likes}
+                    if !user.titles.includes(piece.artist)
+                        input(class="like", id =piece.name, value='Like', type='button', onclick="like()")
+                    else 
+                        p Published by you!
+                    br
+                    br
+                    if !user.titles.includes(piece.artist)
+                        a(href="/user/review/"+piece.name, id="review-link") Leave a Review

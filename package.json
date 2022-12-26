@@ -1,0 +1,19 @@
+{
+  "name": "jordonsamuda-a5",
+  "version": "1.0.0",
+  "description": "COMP 2406 Term Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jordon Samuda",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.7.3",
+    "pug": "^3.0.2"
+  }
+}

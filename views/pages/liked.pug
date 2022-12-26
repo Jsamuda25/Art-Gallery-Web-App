@@ -1,0 +1,53 @@
+html
+    head 
+        title Liked Page 
+        link(rel='stylesheet', href='/stylesheets/home.css')
+        script(src='/javascripts/likesClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/following") Following
+            |
+            |
+            |
+            if user.reviews.length>0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            if user.registered.length > 0
+                a(href="/user/enrolled") Enrolled 
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+
+            
+        div#main 
+            h2 Likes
+            h3 Here, you can view the works that you've liked!
+            
+            each piece in artwork
+                div(class="individual")
+                    a(href= "piece/" + piece.name) Title: #{piece.name}
+                    br
+                    br
+                    img(src= piece.image, id="img")
+                    br
+                    if !user.titles.includes(piece.artist)
+                        input(class="like",id =piece.name, value='Unlike', type='button', onclick="like()")
+                    else 
+                        p Published by you!

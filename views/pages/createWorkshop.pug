@@ -1,0 +1,56 @@
+html
+    head 
+        title Create Workshop
+        link(rel='stylesheet', href='/stylesheets/review.css')
+        script(src='/javascripts/workshopClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/following") Following 
+            |
+            |
+            |
+            |
+            a(href="/user/liked") Liked
+            |
+            |
+            |
+            |
+            if user.reviews.length>0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            a(href="/user/catalogue") Your Work
+            |
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+
+            
+        div#main 
+            h1 Welcome to the Create Workshop Page!
+            h3 Here, artists can create a workshop.
+            div(class="individual")
+                form(action="/user/createWorkshop", method="POST")
+                        h4 Workshop Details
+                        |Name: 
+                        input(name='workshop', id='workshop', type='text')
+                        br
+                        br
+                        input(id ='login', name=value, value='Create', type='submit', onclick="verify()")
+                

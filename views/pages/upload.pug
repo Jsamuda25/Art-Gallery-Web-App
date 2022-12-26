@@ -1,0 +1,75 @@
+html
+    head 
+        title Upload Page
+        link(rel='stylesheet', href='/stylesheets/upload.css')
+        script(src='/javascripts/uploadClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/liked") Liked
+            |
+            |
+            |
+            a(href="/user/following") Following 
+            |
+            |
+            |
+            if user.reviews.length > 0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            if user.registered.length > 0
+                a(href="/user/enrolled") Enrolled 
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+        div#main 
+            h2 Share Your Work With World!
+            div(class="upload")
+                form(action="/user/upload", method="POST")
+                    h3 Enter Details
+                    h4 We've given you some default values just for fun!
+                    |Title:
+                    input(name='title', id='title', type='text')
+                    br
+                    br
+                    |Artist Name (Your Username): 
+                    input(name='artist', id='artist', value=username, type='text')
+                    br
+                    br
+                    |Year: 
+                    input(name='year', id='year', value="2055",type='text')
+                    br
+                    br
+                    |Category:
+                    input(name='category', id='category', value="Boomshakalaka",type='text')
+                    br
+                    br
+                    |Medium:
+                    input(name='medium', id='medium', value="Gold",type='text')
+                    br
+                    br
+                    |Description:
+                    input(name='description', id='description', value="The best!",type='text')
+                    br
+                    br
+                    |Image Link:
+                    input(name='link', id='link',type='text')
+                    br
+                    br
+                    input(id ='upload' value='Upload', type='submit', onclick="verify()")

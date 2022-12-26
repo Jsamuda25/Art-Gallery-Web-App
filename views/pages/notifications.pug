@@ -1,0 +1,38 @@
+html
+    head 
+        title Notifications Page 
+        link(rel='stylesheet', href='/stylesheets/home.css')
+        script(src='/javascripts/likesClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/following") Following
+            |
+            |
+            |
+            if user.reviews.length>0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+
+            
+        div#main 
+            h2 Notifications
+            h3 Here, you can view all your notifications!
+            
+            each notification in user.notifications
+                div(class="individual")
+                    p #{notification}
+                    br

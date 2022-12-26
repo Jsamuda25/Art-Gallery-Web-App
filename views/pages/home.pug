@@ -1,0 +1,93 @@
+html
+    head 
+        title Home Page 
+        link(rel='stylesheet', href='/stylesheets/home.css')
+        script(src='/javascripts/likesClient.js')
+
+    body
+        div#header 
+            div(class="icons")
+                a(href="/user/following") Following
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/liked") Liked
+            |
+            |
+            |
+            a(href="/user/homeArtist") Artist Mode
+            |
+            |
+            |
+            if user.reviews.length>0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            if user.registered.length > 0
+                a(href="/user/enrolled") Enrolled 
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+                
+
+        div#main 
+            div(class="main-header")
+                div#welcome
+                    h1 Welcome to Home Page!
+                    h3 All Art in the Gallery can be seen here!
+                div#search
+                    form(action="/user/search", method="POST")
+                        div#look-box
+                            p Lookup Type
+                            select(id='lookup', name='search')
+                                option(value="Year") Year
+                                option(value="Artist") Artist
+                                option(value="Category") Category
+                                option(value="Medium") Medium
+                   
+                        |Search by Keyword:
+                        input(id ='search', name="lookup", type='text')
+                        input(id ='searchbox', value='Go', type='submit')
+
+            each piece in artwork
+                div(class="individual")
+                    if !user.titles.includes(piece.artist)
+                        a(href= "artists/" + piece.artist) Author:  #{piece.artist}
+                        br
+                    else 
+                        a(href= "artists/" + piece.artist) You
+                        |
+                        |
+                        |
+                        br
+                    a(href= "piece/" + piece.name) Title: #{piece.name}
+                    br
+                    if !user.titles.includes(piece.artist)
+                        a(href="/user/review/"+piece.name, id="review-link") Leave a Review
+                        br
+                    a(href="/user/seeReviews/"+piece.name, id="view-reviews") See Reviews
+                    br
+                    img(src= piece.image, id="img")
+                    p Likes: #{piece.likes}
+                    if !user.titles.includes(piece.artist)
+                        input(class="like", id =piece.name, value='Like', type='button', onclick="like()")
+                    else 
+                        p Published by you!
+                    br
+
+                
+                 
+
+
+
+    

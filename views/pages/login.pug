@@ -1,0 +1,27 @@
+html
+    head 
+        title Login Page
+        link(rel='stylesheet', href='/stylesheets/login.css')
+        script(src='/javascripts/loginClient.js')
+    body 
+        div#header 
+            h3 Welcome to the Login Page!
+
+        div#main 
+            div(class="login")
+                form(action="/user/login", method="POST")
+                    h4 Enter Your Credentials
+                    |Enter Username: 
+                    input(name='username', id='username', type='text')
+                    br
+                    br
+                    |Enter Password: 
+                    input(name='password', id='password', type='password')
+                    br
+                    br
+                    input(id ='login', value='Login', type='submit', onclick="verify()")
+                    a(href='/user/register') Don't Have an Account? Register!
+                        
+
+
+            

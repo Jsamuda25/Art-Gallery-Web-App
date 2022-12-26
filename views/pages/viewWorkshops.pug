@@ -1,0 +1,64 @@
+html
+    head 
+        title View Workshops
+        link(rel='stylesheet', href='/stylesheets/review.css')
+        script(src='/javascripts/workshopClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/following") Following 
+            |
+            |
+            |
+            |
+            a(href="/user/liked") Liked
+            |
+            |
+            |
+            |
+            if user.reviews.length>0
+                a(href="/user/reviews") Your Reviews
+            |
+            |
+            |
+            if user.registered.length > 0
+                a(href="/user/enrolled") Enrolled 
+            |
+            |
+            |
+            br
+            |
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+
+
+            
+        div#main 
+            h1 Welcome to the Workshops Page!
+            if user.username.localeCompare(artistName)!=0
+                h3 Here, you can see all workshops offered by #{creator.username}.
+            else
+                h3 Here, you can see all workshops offered by You.
+
+            each workshop in creator.workshops
+                div(class="individual")
+                    p  Title:  #{workshop}
+                     if user.username.localeCompare(artistName)!=0
+                        br
+                        br
+                        input(class="enroll",id = workshop, value='Enroll', type='button', onclick="enroll()")

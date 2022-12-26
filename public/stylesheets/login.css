@@ -1,0 +1,27 @@
+body {
+    justify-content: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    background-color: rgb(129, 202, 222);
+}
+
+#header{
+    width: 60%;
+    text-align: center;
+}
+#main{
+    text-align: center;
+    width: 40%;
+    background-color: rgb(223, 161, 46);
+    margin-top: 20px;
+    margin-left: 170px;
+    border-radius: 20px;
+    box-shadow: 5px 5px;
+    padding: 10px;
+
+}
+
+#brush{
+    width: 20px;
+    height: 20px;
+}

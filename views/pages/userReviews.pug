@@ -1,0 +1,48 @@
+html
+    head 
+        title Your Reviews Page 
+        link(rel='stylesheet', href='/stylesheets/home.css')
+        script(src='/javascripts/likesClient.js')
+    body 
+        div#header 
+            div(class="icons")
+                a(href= "/user/home") Home
+                br
+                br
+                a(href="/user/notifications")
+                    img(src="/images/bell.png", id="bell")
+                if user.isArtist
+                    br
+                    img(src="/images/brush.png", id="brush")
+            a(href="/user/liked") Liked
+            |
+            |
+            |
+            a(href="/user/following") Following 
+            |
+            |
+            |
+            if user.registered.length > 0
+                a(href="/user/enrolled") Enrolled 
+            |
+            |
+            |
+            div(class="header-buttons")
+                form(action="/user/logout", method="GET")
+                    input(id ='logout' value='Logout', type='submit')
+                form(action="/user/patron", method="PUT")
+                    input(id ='patron' value='Reset Patron', type='submit')
+
+
+            
+        div#main 
+            h2 Hey, #{name} welcome to your Reviews Page!
+            h3 Here, you can view all the reviews you have left!
+
+            
+            
+            each review in reviews
+                    div(class="individual")
+                        p  Your take on "#{review.title}":  #{review.comment}
+                        input(class="delete",id = review, value='Delete', type='button', onclick="deleteReview()")
+                        br
