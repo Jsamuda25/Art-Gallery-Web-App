@@ -1,4 +1,3 @@
-// This page is based on class examples
 //Create express app
 const { response } = require("express");
 const express = require("express");
