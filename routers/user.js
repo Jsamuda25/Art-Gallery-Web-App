@@ -1,7 +1,3 @@
-// Jordon Samuda, 101228980
-
-// a lot of my implemenations are based on lecture code and tutorial demo code. For example, the 
-// way I make queries to the database, the way I set up schemas, and the way I have implemented sessions
 
 let mongoose = require('mongoose');
 const Schema = mongoose.Schema
