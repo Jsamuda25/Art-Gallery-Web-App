@@ -33,9 +33,9 @@ functionality).
 
 # Photos
 ![Screenshot 2022-12-27 at 18-00-43 Artist Page](https://user-images.githubusercontent.com/92758403/209734881-b2f70692-d251-456c-9b82-5ae71a266f80.png)
+![Screenshot 2022-12-27 at 18-00-00 Home Page](https://user-images.githubusercontent.com/92758403/209734904-79bb9c31-0957-4175-b5c7-6f46858f2d87.png)
 
 ![Screenshot 2022-12-27 at 17-59-38 Login Page](https://user-images.githubusercontent.com/92758403/209734862-0388e223-ea8c-4ecd-aeec-f448f1764813.png)
-![Screenshot 2022-12-27 at 18-00-00 Home Page](https://user-images.githubusercontent.com/92758403/209734875-d0fba356-6942-4318-8546-5![Screenshot 2022-12-27 at 18-00-25 Upload Page](https://user-images.githubusercontent.com/92758403/209734878-37aaaec9-efb5-4c14-b7ba-8beee7393c70.png)
-1dab0e91d84.png)
+
 
 
