@@ -1,14 +1,12 @@
 # Art-Gallery-Web-App
 
-Description of program: 
-
 This program implements an online art gallery that allows users to follow artists, like artwork,
 leave artwork reviews and more. The MongoDB database technology is used to store all relevant data, the PUG template
 engine is used to deliver the front end and the backend of the program is done using JavaScript with NodeJS, Express and
 sessions.
 
 
-General Design elements:
+# General Design elements
 
 - My interface has an orange and blue color scheme.
 - The header of my pages has links that serve as navigation tools to various page. This was implemented in place of
@@ -25,7 +23,7 @@ functionality).
 - Users can view all the workshops they are enrolled in (I believe this is an extra piece of functionality).
 - PUG forms and parametrized URL IDs were used as much as possible to send or get information.
 
-Launching instructions:
+# Launching instructions
 
 - Input ‘npm install’ in the terminal of correct directory location
 - Input ‘node database-initializer.js’ in correct terminal to initialize database
