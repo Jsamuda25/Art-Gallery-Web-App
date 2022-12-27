@@ -1,5 +1,6 @@
 # Art-Gallery-Web-App
-#Description of program: 
+
+Description of program: 
 
 This program implements an online art gallery that allows users to follow artists, like artwork,
 leave artwork reviews and more. The MongoDB database technology is used to store all relevant data, the PUG template
@@ -22,5 +23,11 @@ functionality).
 - The search for an artwork functionality is implemented using a dropdown bar and search bar.
 - Users can delete their reviews.
 - Users can view all the workshops they are enrolled in (I believe this is an extra piece of functionality).
-- PUG forms and parametrized URL IDs were used as much as possible to send or get information. I tended to
-refrain from using client JavaScript where I could.
+- PUG forms and parametrized URL IDs were used as much as possible to send or get information.
+
+Launching instructions:
+
+- Input ‘npm install’ in the terminal of correct directory location
+- Input ‘node database-initializer.js’ in correct terminal to initialize database
+- Input 'node server.js' in correct terminal to run the server
+- Input URL http://localhost:3000/ in browser
