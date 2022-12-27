@@ -29,3 +29,10 @@ functionality).
 - Input ‘node database-initializer.js’ in correct terminal to initialize database
 - Input 'node server.js' in correct terminal to run the server
 - Input URL http://localhost:3000/ in browser
+
+
+# Photos
+
+![Screenshot 2022-12-27 at 17-59-38 Login Page](https://user-images.githubusercontent.com/92758403/209734862-0388e223-ea8c-4ecd-aeec-f448f1764813.png)
+
+
