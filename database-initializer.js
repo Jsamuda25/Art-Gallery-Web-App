@@ -12,7 +12,6 @@ fs.readFile('gallery.json', 'utf8', function(err,data){
 const { debugPort } = require("process");
 const mc = require("mongodb").MongoClient;
 
-// The structure and implementation of this database initializer is influenced by lecture 18 code
 mc.connect("mongodb://127.0.0.1:27017/database-a5", { useNewUrlParser: true }, function(err, client) {
     if(err) throw err;
     console.log("Connected to datbase!");
