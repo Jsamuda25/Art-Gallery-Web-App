@@ -474,7 +474,7 @@ async function showArtist(req,res,next){
     let name = req.params.name;
     let art;
 
-    // this try catch block is inspired by tutorial 9 demo code
+
     try{
         const searchResult = await db.collection("users").findOne({username: name});
         if(searchResult == null){ // no such artist exists
@@ -580,7 +580,6 @@ async function addReview(req, res, next){
         return;
     }  
 
-    // this try catch block is inspired by tutorial 9 demo code
     try{
         const searchResult = await db.collection("galleries").findOne({name: title});
         if(searchResult == null){ // no such user exists
@@ -614,7 +613,7 @@ Function: showPiece()
 */
 async function showPiece(req, res, next){
     let title = req.params.name
-    // this try catch block is inspired by tutorial 9 demo code
+
     try{
         const searchResult = await db.collection("galleries").findOne({name: title});
         if(searchResult == null){ // no such user exists
@@ -661,7 +660,6 @@ async function deleteOpinion(req,res,next){
             req.session.reviews.splice(i,1);
             db.collection("users").updateOne({username: req.session.username},{$set:{reviews: req.session.reviews}});
 
-            // this try catch block is inspired by tutorial 9 demo code
             try{
                 const searchResult = await db.collection("galleries").findOne({name: review.title});
                 if(searchResult == null){ // no such user exists
@@ -736,7 +734,6 @@ async function makeWorkshop(req, res, next){
         return;
     }  
 
-    // this try catch black was inspired by tutorial 9 demo code
     try{
         const searchResult = await db.collection("users").findOne({username: req.session.username});
         if(searchResult == null){ // no such user exists
@@ -804,7 +801,7 @@ Function: enroll()
 */
 async function enroll(req,res,next){
     let workshop = req.params.name;
-    // this try catch block is inspired by tutorial 9 demo code
+
     try{
         const searchResult = await db.collection("users").findOne({username: req.session.username});
         if(searchResult == null){ // no such user exists
