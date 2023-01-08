@@ -24,7 +24,7 @@ functionality).
 - PUG forms and parametrized URL IDs were used as much as possible to send or get information.
 
 # Launching instructions
-
+- Download and extract app.zip file
 - Input ‘npm install’ in the terminal of correct directory location
 - Input ‘node database-initializer.js’ in correct terminal to initialize database
 - Input 'node server.js' in correct terminal to run the server
