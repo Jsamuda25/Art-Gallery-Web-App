@@ -97,7 +97,6 @@ Function: auth()
   return: no return value
 */
 function auth(req, res, next){
-    // based off lecture code about sessions
     if(!req.session.loggedin){
         res.status(401).render("./pages/error", {message: "Not logged in!"})
     }    
