@@ -29,6 +29,7 @@ functionality).
 - Input ‘node database-initializer.js’ in correct terminal to initialize database
 - Input 'node server.js' in correct terminal to run the server
 - Input URL http://localhost:3000/ in browser
+- Now you can test the application
 
 
 # Photos
