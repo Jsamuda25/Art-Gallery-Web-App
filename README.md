@@ -8,6 +8,7 @@ sessions.
 
 # General Design elements
 
+- Sessions are used to maintain the loggede in user's preferences and settings.
 - My interface has an orange and blue color scheme.
 - The header of my pages has links that serve as navigation tools to various page. This was implemented in place of
 a designated “Your Profile” page. For example, users can navigate their liked photos from the header navigation
@@ -24,6 +25,7 @@ functionality).
 - PUG forms and parametrized URL IDs were used as much as possible to send or get information.
 
 # Launching instructions
+
 - Download and extract app.zip file
 - Input ‘npm install’ in the terminal of correct directory location
 - Input ‘node database-initializer.js’ in correct terminal to initialize database
